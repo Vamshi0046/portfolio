@@ -48,11 +48,14 @@ import food from '../assets/food.jpeg'
 import portfolio from '../assets/portfolio.png'
 import django from '../assets/django.png'
 import mysql from '../assets/mysql.png'
+import vamshilogo from '../assets/vamshilogo.jpg'
+
 
 
 
 
 const images = {
+  vamshilogo,
   mysql,
   django,
   portfolio,

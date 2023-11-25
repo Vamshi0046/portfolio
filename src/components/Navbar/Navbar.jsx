@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { HiMenuAlt4, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 import { images } from "../../constants";
 
@@ -31,10 +31,19 @@ const Navbar = () => {
     }
   };
 
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
+
+  const handleLinkClick = (item) => {
+    setActive(item);
+    setToggle(false);
+  };
+
   return (
-    <nav className={`app__navbar ${classFloat}`} style={{fontFamily:'var(--font-base)'}}>
+    <nav className={`app__navbar ${classFloat}`}>
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        <img src={images.vamshilogo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
         {["home", "about", "work", "skills", "contact"].map(
@@ -43,7 +52,7 @@ const Navbar = () => {
               key={`link-${item}`}
               className={`app__flex p-text ${active === item ? "active" : ""}`}
             >
-              <a href={`#${item}`} onClick={() => setActive(item)}>
+              <a href={`#${item}`} onClick={() => handleLinkClick(item)}>
                 {item}
               </a>
             </li>
@@ -52,30 +61,20 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-menu">
-        <HiMenuAlt4 onClick={() => setToggle(true)} />
+        <HiMenuAlt4 onClick={handleToggle} />
         {toggle && (
-          <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-          >
-            <HiX onClick={() => setToggle(false)} />
+          <div className="burger-menu">
+            <HiX onClick={handleToggle} />
             <ul>
-              {[
-                "home",
-                "about",
-                "work",
-                "skills",
-                // "testimonials",
-                "contact",
-              ].map((item) => (
+              {["home", "about", "work", "skills", "contact"].map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
+                  <a href={`#${item}`} onClick={() => handleLinkClick(item)}>
                     {item}
                   </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         )}
       </div>
     </nav>

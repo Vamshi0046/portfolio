@@ -11,46 +11,48 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterWorks, setFilterWorks] = useState([]);
-  const works = [
-    {
-      title: "Parking Management App",
-      description: "Streamline parking operations and enhance user expirence",
-      tags: ["Python", "Web Projects"],
-      imgUrl: images.parkingimg,
-      projectLink: "",
-      codeLink: "https://github.com/Vamshi0046/Parking_Management_System.git",
-    },
-    {
-      title: "News APP",
-      description: "Stay informed with real-time news updates on a user-friendly app.",
-      tags: ["Python", "Web Projects"],
-      imgUrl: images.news,
-      projectLink: "https://newsjet.vercel.app",
-      codeLink: "https://github.com/Vamshi0046/newsjet.git",
-    },
-    {
-      title: "Food Order App",
-      description: "Delicious food on your way...using React JS",
-      tags: ["ReactJS", "Web Projects"],
-      imgUrl: images.food,
-      projectLink: "",
-      codeLink: "",
-    },
-    {
-      title: "Portfolio Website",
-      description: "A visually attractive Portfolio website uses ReactJS & EmailJS",
-      tags: ["ReactJS", "Web Projects"],
-      imgUrl: images.portfolio,
-      projectLink: "https://vamshis.netlify.app",
-      codeLink: "https://github.com/example/project2",
-    },
-  ];
-
+  const [works, setWorks] = useState([]);
   const [touched, setTouched] = useState(null);
+
   useEffect(() => {
-    // Set the initial filter to "All" when the component mounts
-    handleFilter("All");
+    const data = [
+      {
+        title: "Parking Management App",
+        description: "Streamline parking operations and enhance user expirence",
+        tags: ["Python", "Web Projects"],
+        imgUrl: images.parkingimg,
+        projectLink: "",
+        codeLink: "https://github.com/Vamshi0046/Parking_Management_System.git",
+      },
+      {
+        title: "News APP",
+        description: "Stay informed with real-time news updates on a user-friendly app.",
+        tags: ["Python", "Web Projects"],
+        imgUrl: images.news,
+        projectLink: "https://newsjet.vercel.app",
+        codeLink: "https://github.com/Vamshi0046/newsjet.git",
+      },
+      {
+        title: "Food Order App",
+        description: "Delicious food on your way...using React JS",
+        tags: ["ReactJS", "Web Projects"],
+        imgUrl: images.food,
+        projectLink: "",
+        codeLink: "",
+      },
+      {
+        title: "Portfolio Website",
+        description: "A visually attractive Portfolio website uses ReactJS & EmailJS",
+        tags: ["ReactJS", "Web Projects"],
+        imgUrl: images.portfolio,
+        projectLink: "https://vamshis.netlify.app",
+        codeLink: "https://github.com/Vamshi0046/portfolio.git",
+      },
+    ];
+    setWorks(data);
+    setFilterWorks(data);
   }, []);
+
 
   const handleFilter = (item) => {
     setActiveFilter(item);
@@ -120,7 +122,6 @@ const Work = () => {
                     work.projectLink === "" ? "none" : ""
                     }`}
                 >
-                  {work.projectLink !== "" && (
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
@@ -129,7 +130,6 @@ const Work = () => {
                     >
                       <AiFillEye />
                     </motion.div>
-                  )}
                 </a>
 
                 <a
@@ -173,3 +173,6 @@ export default AppWrap(
   "work",
   "app__primarybg"
 );
+
+
+

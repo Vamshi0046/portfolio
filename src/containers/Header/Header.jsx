@@ -45,7 +45,7 @@ const headerSkillVariants = {
 
 const Header = () => {
   const { text: tagText } = useTypewriter({
-    words: ["Fullstack Developer", "ReactJS Developer", "Python Developer"],
+    words: ["Fullstack Developer", "Python Developer", "ReactJS Developer"],
     typeSpeed: 80,
     loop: false,
   });

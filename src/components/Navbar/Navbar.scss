@@ -26,10 +26,13 @@
   justify-content: center;
   align-items: center;
 
+
   img {
-    width: 90px;
-    height: 20px;
+    width: 95px;
+    height: 25px;
     // object-fit: scale-down;
+    filter: brightness(100%);
+    filter:contrast(100%);
   }
 
   @media screen and (min-width: 2000px) {
