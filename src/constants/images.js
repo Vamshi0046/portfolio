@@ -42,19 +42,21 @@ import resume from "../assets/vamshi_resume.pdf";
 import bitmoji from "../assets/bitmoji.png";
 
 
-import parkingimg from '../assets/parking1.jpeg'
+import parkingimg from '../assets/parking.jpg'
 import news from '../assets/news.jpeg'
-import food from '../assets/food.jpeg'
+import food from '../assets/food.jpg'
 import portfolio from '../assets/portfolio.png'
 import django from '../assets/django.png'
 import mysql from '../assets/mysql.png'
 import vamshilogo from '../assets/vamshilogo.jpg'
+import parkingimg2 from '../assets/parking2.png'
 
 
 
 
 
 const images = {
+  parkingimg2,
   vamshilogo,
   mysql,
   django,
