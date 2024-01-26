@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { ReactTooltip } from "react-tooltip";
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 import { images } from "../../constants";
@@ -58,19 +57,11 @@ const Skills = () => {
       year: 2023,
       works: [
         {
-          name: "Full Stack Developer",
-          company: "Ihub Technologis",
+          name: "Software Engineer",
+          company: "Kims Hospitals",
         },
         {
-          name: "Learned Python & Django",
-          company: "Individual"
-        },
-        {
-          name: "Learned React JS",
-          company: "Individual"
-        },
-        {
-          name: "Learned Basics of Web Development",
+          name: "Learned Full Stack Development  JS / PYTHON",
           company: "Individual"
         },
         // Add more works as needed
