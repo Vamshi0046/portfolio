@@ -1,8 +1,8 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
-
+import { notification } from 'antd';
 import "./Contact.scss";
 import emailjs from '@emailjs/browser';
 
@@ -13,23 +13,31 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true); // Start loading when email is being sent
 
     emailjs
-      .sendForm('service_l4huv9a', 'template_ab2t8x9', form.current, 'QbIPZr8YEPu_a_fqb')
+      .sendForm('service_l4huv9a', 'template_ab2t8x9', form.current, '1USoWhPmzKjnORC_a')
       .then(
         (result) => {
           console.log(result.text);
           form.current.reset(); // Reset the form after successful submission
           setIsLoading(false);
           setIsFormSubmitted(true);
+          notification.success({
+            message: 'Email Sent',
+            description: 'Your email was sent successfully!',
+          });
         },
         (error) => {
           console.log(error.text);
           setIsLoading(false); // Set loading to false in case of an error
+          notification.error({
+            message: 'Error',
+            description: 'Failed to send email. Please try again later.',
+          });
         }
       );
-  };
-
+  }
   return (
     <>
       <h2 className="head-text" style={{ fontFamily: 'var(--font-base)' }}>
@@ -54,16 +62,16 @@ const Contact = () => {
       {!isFormSubmitted ? (
         <form className="app__contact-form app__flex" ref={form} onSubmit={sendEmail}>
           <div className="app__flex">
-            <input type="text" className="p-text" placeholder="Your Name" name="from_name" required={true}/>
+            <input type="text" className="p-text" placeholder="Your Name" name="from_name" required={true} />
           </div>
           <div className="app__flex">
-            <input type="email" className="p-text" placeholder="Your Email" name="from_email" required={true}/>
+            <input type="email" className="p-text" placeholder="Your Email" name="from_email" required={true} />
           </div>
           <div className="app__flex">
-            <input type="text" className="p-text" placeholder="Subject" name="subject"required={true} />
+            <input type="text" className="p-text" placeholder="Subject" name="subject" required={true} />
           </div>
           <div>
-            <textarea name="message" placeholder="Your Message" required={true}/>
+            <textarea name="message" placeholder="Your Message" required={true} />
           </div>
           <button type="submit" className="portfolio-button">
             {loading ? "Sending Message" : "Send Message"}

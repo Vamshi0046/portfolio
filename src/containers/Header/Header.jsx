@@ -45,7 +45,7 @@ const headerSkillVariants = {
 
 const Header = () => {
   const { text: tagText } = useTypewriter({
-    words: ["Fullstack Developer", "Python Developer", "ReactJS Developer"],
+    words: ["Mern stack Developer","ReactJS Developer", "Python Developer",],
     typeSpeed: 80,
     loop: false,
   });
@@ -94,8 +94,9 @@ const Header = () => {
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
-      >
-        {[images.python, images.react, images.django].map((circle, index) => (
+      >     
+      {/* //images.django */}
+        {[images.python, images.react,images.node].map((circle, index) => (
           <motion.div
             variants={headerSkillVariants}
             whileInView="visible"

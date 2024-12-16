@@ -17,6 +17,7 @@ import redux from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import typescript from "../assets/typescript.png";
 import vue from "../assets/vue.png";
+import monggodb from '../assets/mongodb.png';
 
 import profile from "../assets/profile.png";
 import programmer from "../assets/programmer.svg";
@@ -101,6 +102,7 @@ const images = {
   nb,
   skype,
   spotify,
+  monggodb,
 };
 
 export default images;

@@ -20,6 +20,16 @@ const Skills = () => {
       bgColor: "#edf2f8",
     },
     {
+      name: "Node JS",
+      icon: images.node,
+      bgColor: "#edf2f8",
+    },
+    {
+      name: "Mongo DB",
+      icon: images.monggodb,
+      bgColor: "#edf2f8",
+    },
+    {
       name: "CSS",
       icon: images.css,
       bgColor: "#edf2f8",
@@ -59,11 +69,13 @@ const Skills = () => {
         {
           name: "Software Engineer",
           company: "Kims Hospitals",
+          startDate: "2023-12-01", // YYYY-MM-DD format
+          endDate:null, 
         },
-        {
-          name: "Learned Full Stack Development  JS / PYTHON",
-          company: "Individual"
-        },
+        // {
+        //   name: "Learned Full Stack Development  JS / PYTHON",
+        //   company: "Individual"
+        // },
         // Add more works as needed
       ],
     },
@@ -100,6 +112,36 @@ const Skills = () => {
     },
   };
 
+  const formatDateRange = (startDate, endDate) => {
+    const months = [
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    ];
+  
+    const start = new Date(startDate);
+    const end = endDate ? new Date(endDate) : new Date();
+  
+    // Format start and end dates
+    const formattedStart = `${months[start.getMonth()]} ${start.getFullYear()}`;
+    const formattedEnd = endDate
+      ? `${months[end.getMonth()]} ${end.getFullYear()}`
+      : "Present";
+  
+    // Calculate duration
+    const years = end.getFullYear() - start.getFullYear();
+    const monthsDiff = end.getMonth() - start.getMonth() + (years * 12);
+  
+    const displayYears = Math.floor(monthsDiff / 12);
+    const displayMonths = monthsDiff % 12;
+  
+    const duration = `${displayYears ? displayYears + " yr " : ""}${
+      displayMonths ? displayMonths + " mo" : ""
+    }`;
+  
+    return `${formattedStart} - ${formattedEnd} • ${duration}`;
+  };
+  
+  
   return (
     <>
       <h2 className="head-text" style={{fontFamily:'var(--font-base)'}}>
@@ -148,7 +190,8 @@ const Skills = () => {
                       data-for={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <p className="p-text"> {work.company}</p>
+                      <p className="p-text">{formatDateRange(work.startDate, work.endDate)}</p>
                     </motion.div>
                     <ReactTooltip
                       id={work.name}
