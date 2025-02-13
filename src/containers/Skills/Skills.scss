@@ -147,3 +147,73 @@
     line-height: 2 !important;
   }
 }
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  margin-left: -2rem;
+  margin-bottom: 1rem;
+}
+
+.company-sec {
+  margin-left: 10px;
+}
+
+.timeline-margin {
+  margin-left: -10px
+}
+
+
+/* Styles for mobile screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .company-header {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .company-sec {
+    margin-left: 10px;
+  }
+
+  .timeline-margin {
+    margin-left: 20px;
+  }
+
+}
+
+// .dark-mode .timeline-margin  {
+//   background: #1a2533 !important; /* Dark background */
+//   color: #ffffff !important;
+// }
+
+.ant-timeline-item-tail {
+  border-color: #64B5F6	 !important; /* Custom Line Color */
+}

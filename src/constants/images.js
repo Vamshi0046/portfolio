@@ -18,7 +18,7 @@ import sass from "../assets/sass.png";
 import typescript from "../assets/typescript.png";
 import vue from "../assets/vue.png";
 import monggodb from '../assets/mongodb.png';
-
+import kims_logo from '../assets/kims_logo.png'
 import profile from "../assets/profile.png";
 import programmer from "../assets/programmer.svg";
 import testimonialBg from "../assets/testimonialBg.png";
@@ -103,6 +103,7 @@ const images = {
   skype,
   spotify,
   monggodb,
+  kims_logo,
 };
 
 export default images;
