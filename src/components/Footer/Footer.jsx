@@ -104,7 +104,7 @@ const Footer = () => {
           variants={childCopyVariant}
           whileInView="view"
         >
-          &copy; 2023 Vamshi
+          &copy; {new Date().getFullYear()}  Vamshi
         </motion.p>
         <motion.p
           className="p-text"
