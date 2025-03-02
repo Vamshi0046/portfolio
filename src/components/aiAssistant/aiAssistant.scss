@@ -1,0 +1,159 @@
+.ai-assistant {
+    position: fixed;
+    bottom: 68px;
+    right: 20px;
+    z-index: 1000;
+    cursor: grab;
+  }
+  .assistant-btn {
+    background-color: rgb(187, 185, 174);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  .assistant-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
+  }
+  .assistant-popup {
+    position: absolute;
+    bottom: 60px;
+    right: 100%;
+    height:80vh;
+    width: 280px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .assistant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .chat-container {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 300px;
+  }
+  .message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 75%;
+  }
+  .message.bot {
+    background: #007bff;
+    color: white;
+    align-self: flex-start;
+  }
+  .message.user {
+    background: #f1f1f1;
+    align-self: flex-end;
+  }
+  .typing {
+    font-style: italic;
+    color: gray;
+  }
+  .input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-top: 6px;
+  }
+  .input-container input {
+    flex: 1;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  .input-container button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px;
+    margin-left: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .quick-replies {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .quick-replies button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  /* Panda Icon Animations */
+  .panda-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+  .panda-icon.open {
+    animation: wave 0.5s ease-in-out;
+  }
+  .panda-icon.typing {
+    animation: rotate 1s infinite;
+  }
+  .panda-icon.hovered {
+    animation: wave 0.5s ease-in-out;
+  }
+  .panda-icon.clicked {
+    animation: bounce 0.5s ease-in-out;
+  }
+  @keyframes wave {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(15deg);
+    }
+    75% {
+      transform: rotate(-15deg);
+    }
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
