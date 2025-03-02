@@ -53,6 +53,9 @@ import vamshilogo from '../assets/vamshilogo.jpg'
 import parkingimg2 from '../assets/parking2.png'
 
 
+import commingsoon from '../assets/commingsoon.jpg'
+
+
 
 
 
@@ -104,6 +107,7 @@ const images = {
   spotify,
   monggodb,
   kims_logo,
+  commingsoon,
 };
 
 export default images;

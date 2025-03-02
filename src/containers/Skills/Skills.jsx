@@ -104,7 +104,7 @@ const Skills = () => {
               whileTap={{ y: -7, scale: 1.05 }}
             >
               <div className="app__flex" style={{ backgroundColor: skill.bgColor }}>
-                <img src={skill.icon} alt={skill.name} />
+                <img src={skill.icon} alt={skill.name}  loading="lazy"  />
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>

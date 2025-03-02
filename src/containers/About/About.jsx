@@ -17,7 +17,7 @@ const About = () => {
     {
       title: "Fullstack Developer",
       imgUrl: images.fullstack,
-      description: "Python Full Stack, well versed with Python, React, Javascript, Django, MySQL, RESTful APIs, HTML & CSS etc.",
+      description: "Skilled in MERN stack (MongoDB, Express.js, React, Node.js), building fast and scalable web applications.",
     },
     {
       title: "Tech Enthusiast",
@@ -29,10 +29,16 @@ const About = () => {
       imgUrl: images.problemsolving,
       description: "Equipped with good analytical and problem solving skills. Creative thinker and love to take up any challenges or puzzles.",
     },
+    // {
+    //   title: "Visionary",
+    //   imgUrl: images.leadership,
+    //   description: "A visionary with commendable leadership qualities. Aiming to reach new heights. Tend to recover quickly from setbacks and learn from failures.",
+    // },
     {
-      title: "Visionary",
+      title: "Freelancer & Consultant",
       imgUrl: images.leadership,
-      description: "A visionary with commendable leadership qualities. Aiming to reach new heights. Tend to recover quickly from setbacks and learn from failures.",
+      description:
+        "Open to freelance projects and collaborations. Whether you need a personal portfolio, a business website, or a full-stack web app, I can turn your ideas into reality.",
     },
   ];
 
@@ -56,6 +62,7 @@ const About = () => {
                 aboutMe.profileImg
               }
               alt="Profile"
+              loading="lazy" 
             />
           </div>
         </div>
@@ -83,7 +90,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={about.imgUrl} alt={about.title}  loading="lazy"  />
             <h2 className="bold-text" style={{ marginTop: "20px" }}>
               {about.title}
             </h2>

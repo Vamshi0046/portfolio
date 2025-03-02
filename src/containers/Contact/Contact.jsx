@@ -46,13 +46,13 @@ const Contact = () => {
 
       <div className="app__contact-cards" style={{ fontFamily: 'var(--font-base)' }}>
         <div className="app__contact-card">
-          <img src={images.email} alt="Email Icon" />
+          <img src={images.email} alt="Email Icon"  loading="lazy" />
           <a href="mailto:vamshi0046@gmail.com" className="p-text">
             vamshi0046@gmail.com
           </a>
         </div>
         <div className="app__contact-card">
-          <img src={images.mobile} alt="Mobile Icon" />
+          <img src={images.mobile} alt="Mobile Icon"  loading="lazy"  />
           <a href="tel:+919963610978" className="p-text">
             +91 9963610978
           </a>

@@ -51,7 +51,7 @@ const Header = () => {
   });
 
   return (
-    <div className="app__header app__flex" style={{fontFamily:'var(--font-base)'}}>
+    <div className="app__header app__flex" style={{fontFamily:'var(--font-base)',marginTop:'2rem'}}>
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
@@ -107,7 +107,7 @@ const Header = () => {
             className="circle-cmp app__flex"
             key={`circle-${index}`}
           >
-            <img src={circle} alt="circle" />
+            <img src={circle} alt="circle"  loading="lazy"  />
           </motion.div>
         ))}
       </motion.div>

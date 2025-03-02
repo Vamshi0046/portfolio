@@ -1,0 +1,50 @@
+/* 🔥 Expertise Banner Styles */
+.expertise-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #556270);
+    color: #ffd700;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000; /* Highest priority */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      padding: 8px;
+      flex-direction: column;
+    }
+  
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      color: #fff;
+      padding: 5px 10px;
+      cursor: pointer;
+  
+      &:hover {
+        color: #f1f1f1;
+        transform: scale(1.1);
+      }
+  
+      @media screen and (max-width: 768px) {
+        font-size: 16px;
+        right: 10px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 542px) {
+    .hide-on-mobile {
+      display: none;
+    }
+  }
