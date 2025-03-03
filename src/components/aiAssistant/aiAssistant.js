@@ -68,6 +68,7 @@ const AiAssistant = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const chatRef = useRef(null);
+  const [touchStartTime, setTouchStartTime] = useState(0);
 
   useEffect(() => {
     if (chatRef.current) {
@@ -190,6 +191,22 @@ const AiAssistant = () => {
     handleSendMessage();
   };
 
+
+    // Handle touch start
+    const handleTouchStart = () => {
+      setTouchStartTime(Date.now()); // Record the start time of the touch
+    };
+  
+    // Handle touch end
+    const handleTouchEnd = () => {
+      const touchDuration = Date.now() - touchStartTime;
+      if (touchDuration < 300) { // If the touch duration is less than 200ms, consider it a tap
+        setIsOpen(!isOpen);
+        setIsClicked(true);
+        setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+      }
+    };
+
   return (
     <Draggable>
       <div className="ai-assistant">
@@ -203,14 +220,16 @@ const AiAssistant = () => {
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onTouchStart={() => {
-            setIsOpen(!isOpen);
-            setIsClicked(true);
-            setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
-          }}
-          onTouchEnd={()=>{
-            setIsHovered(false)
-          }}
+          // onTouchStart={() => {
+          //   setIsOpen(!isOpen);
+          //   setIsClicked(true);
+          //   setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+          // }}
+          // onTouchEnd={()=>{
+          //   setIsHovered(false)
+          // }}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
 
         >
           <PandaIcon isOpen={isOpen} isTyping={isTyping} isHovered={isHovered} isClicked={isClicked} />
