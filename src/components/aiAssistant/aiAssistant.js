@@ -5,7 +5,7 @@ import axios from "axios";
 import "./aiAssistant.scss";
 
 
-const API_KEY = "sk-aa0444e5670f46ca8530ca214f52d903"; // Replace with your DeepSeek API key
+const API_KEY = ""; // Replace with your DeepSeek API key
 const API_URL = "https://api.deepseek.com/v1/chat/completions"; // DeepSeek API endpoint
 
 const PandaIcon = ({ isOpen, isTyping, isHovered, isClicked }) => (
@@ -203,6 +203,15 @@ const AiAssistant = () => {
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => {
+            setIsOpen(!isOpen);
+            setIsClicked(true);
+            setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+          }}
+          onTouchEnd={()=>{
+            setIsHovered(false)
+          }}
+
         >
           <PandaIcon isOpen={isOpen} isTyping={isTyping} isHovered={isHovered} isClicked={isClicked} />
         </button>
@@ -212,7 +221,7 @@ const AiAssistant = () => {
           <div className="assistant-popup">
             <div className="assistant-header">
               <h3>AI Assistant</h3>
-              <button onClick={() => setIsOpen(false)} className="close-btn">
+              <button onClick={() => setIsOpen(false)} onTouchStart={() => setIsOpen(false)} className="close-btn">
                 <FaTimes />
               </button>
             </div>
@@ -235,8 +244,12 @@ const AiAssistant = () => {
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+                onTouchStart={(e) => {
+                  e.stopPropagation();
+                  e.target.focus(); // Force focus on touch
+                }}
               />
-              <button onClick={handleSendMessage}>
+              <button onClick={handleSendMessage} onTouchStart={handleSendMessage}>
                 <FaPaperPlane />
               </button>
             </div>
@@ -244,7 +257,7 @@ const AiAssistant = () => {
             {/* Quick replies */}
             <div className="quick-replies">
               {faqs.map((faq, index) => (
-                <button key={index} onClick={() => handleQuickReply(faq.question)}>
+                <button key={index} onClick={() => handleQuickReply(faq.question)} onTouchStart={() => handleQuickReply(faq.question)} >
                   {faq.question}
                 </button>
               ))}

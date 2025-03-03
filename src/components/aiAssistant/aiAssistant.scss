@@ -58,6 +58,8 @@
     flex-direction: column;
     gap: 6px;
     height: 300px;
+    // -webkit-overflow-scrolling: touch; // Smooth scrolling for mobile
+    // touch-action: pan-y; // Enables vertical scrolling
   }
   .message {
     padding: 8px 12px;
