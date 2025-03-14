@@ -54,6 +54,8 @@ import parkingimg2 from '../assets/parking2.png'
 
 
 import commingsoon from '../assets/commingsoon.jpg'
+import profilepic from '../assets/profilepic.jpg'
+import profilepicbg from '../assets/profilepic-bg.png'
 
 
 
@@ -108,6 +110,8 @@ const images = {
   monggodb,
   kims_logo,
   commingsoon,
+  profilepic,
+  profilepicbg,
 };
 
 export default images;

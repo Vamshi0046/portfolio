@@ -60,8 +60,11 @@ const Navbar = () => {
       <div>
         <nav className={`app__navbar ${classFloat}`}>
           <div className="app__navbar-logo"  >
-            <img src={images.vamshilogo} alt="logo"  loading="lazy"  />
-            {/* <p className="logoname">VamshiDev</p> */}
+            {/* <img src={images.vamshilogo} alt="logo"  loading="lazy"  /> */}
+            <p className="logoname">
+              {/* VamshiDev <span className="symbol">&lt;/&gt;</span> */}
+              Vamshi<span className="highlight">Dev</span> <span className="symbol">&lt;/&gt;</span>
+            </p>
           </div>
           {/* <ul className="app__navbar-links">
           {["home", "about", "work", "skills", "contact"].map(

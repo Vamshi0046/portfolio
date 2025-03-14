@@ -286,3 +286,58 @@ margin-top: var(--navbar-margin-top);
     display: none;
   }
 }
+
+// .logoname {
+//   font-size: 1.3rem;
+//   font-weight: 500;
+//   font-family: 'Poppins', sans-serif;
+// }
+
+// .symbol {
+//   color: #ff7f50; /* Orange color */
+//   font-size: 1.3rem;
+// }
+
+// /* Adjust font size for mobile screens */
+// @media screen and (max-width: 768px) {
+//   .logoname {
+//     font-size: 1.1rem;
+//   }
+
+//   .symbol {
+//     font-size: 1.1rem;
+//   }
+// }
+
+.logoname {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #ff6b6b, #556270);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  background: linear-gradient(90deg, rgb(48, 43, 43), rgb(147, 128, 128));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.symbol {
+  color: #e5470e; /* Orange color */
+  font-size: 1.3rem;
+
+}
+
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .logoname {
+    font-size: 1.1rem;
+  }
+
+  .symbol {
+    font-size: 1.1rem;
+  }
+}

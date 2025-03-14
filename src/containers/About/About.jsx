@@ -8,7 +8,7 @@ import "./About.scss";
 
 const About = () => {
   const aboutMe = {
-    profileImg: images.bitmoji,
+    profileImg: images.profilepicbg,
     description: "Hi there, I'm Vamshi - a full stack web developer. I develop beautiful and user-friendly websites. I like what I’m currently doing (Web Development!…) and very much interested in Machine Learning & AI. Challenging myself to learn new things and expanding my skillset - my driving force. Talking about my personality, I describe myself as a result-oriented person; great team player yet competent solo worker and an efficient individual. You can image me as a diligent and easygoing person with a good sense of humour.",
     resumeUrl: images.resume,
   };
@@ -63,6 +63,7 @@ const About = () => {
               }
               alt="Profile"
               loading="lazy" 
+              className="profilepicstyle"
             />
           </div>
         </div>
