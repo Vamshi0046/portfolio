@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 // import { motion } from "framer-motion";
-import { images } from "../../constants";
+// import { images } from "../../constants";
 import "./Navbar.scss";
 // import { CloseOutlined } from "@ant-design/icons"
 
