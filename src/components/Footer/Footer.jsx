@@ -113,6 +113,13 @@ const Footer = () => {
         >
           ALL RIGHTS RESERVED
         </motion.p>
+        <motion.p
+          className="p-text"
+          variants={childCopyVariant}
+          whileInView="view"
+        >
+          Made with ❤️ in India
+        </motion.p>
       </motion.div>
     </div>
   );

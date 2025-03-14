@@ -86,7 +86,7 @@ const Navbar = () => {
               <div className="burger-menu">
                 <HiX onClick={handleToggle} />
                 <ul>
-                  {["home", "about", "work", "skills", "services", "contact"].map((item) => (
+                  {["home", "about", "projects", "skills & work", "services", "contact"].map((item) => (
                     <li key={item}>
                       <a href={`#${item}`} onClick={() => handleLinkClick(item)}>
                         {item}

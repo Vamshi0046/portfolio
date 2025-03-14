@@ -22,7 +22,7 @@ const FloatingHireMe = () => {
       />
       <FloatButton
         icon={<InstagramOutlined style={{ color: "#E1306C" }} />} // Instagram pink color
-        href="https://www.instagram.com/your_instagram"
+        href="https://www.instagram.com/va_m_shi_46"
         target="_blank"
       />
       <FloatButton
