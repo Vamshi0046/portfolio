@@ -27,11 +27,11 @@ const Services = () => {
 
     return (
         <section className="services-section">
-            <div className="services-intro">
+            <div className="services-intro app__about-data app__flex">
                 <h4 className="head-text" style={{ fontFamily: 'var(--font-base)' }}>
                     Choose <span>the right service</span> for your business growth
                 </h4>
-                <p className="p-text">
+                <p className="" style={{ width: '80%', textAlign: 'center', margin: 'auto' }}>
                     Elevate your brand and accelerate your business with tailored web solutions. Select a service that aligns with your goals and make an impact online.
                 </p>
             </div>
@@ -50,7 +50,7 @@ const Services = () => {
                         {/* <a href="#contact" >Let’s Build Something Great!</a> */}
                         <button
                             className="portfolio-button"
-                            style={{margin:"-1px"}}
+                            style={{ margin: "-1px" }}
                             onClick={() => window.location.href = "#contact"}
                         >
                             Let’s Build Something Great!

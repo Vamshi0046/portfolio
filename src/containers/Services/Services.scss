@@ -1,61 +1,45 @@
 .services-section {
-  text-align: center;
-  // padding: 20px 20px;
-  //background: #fafafa; // Light background
-
-  // .head-text {
-  //   font-size: 2.5rem;
-  //   margin-bottom: 1rem;
-  //   color: #2c3e50; // Dark blue-gray for professionalism
-  //   font-weight: 600;
-
-  //   span {
-  //     color: #3498db; // Light blue accent
-  //   }
-  // }
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   .head-text {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     color: var(--black-color);
     text-transform: capitalize;
-  
+
     span {
       color: var(--secondary-color);
     }
-  
-    @media screen and (min-width: 2000px) {
-      font-size: 4rem;
-    }
-  
-    @media screen and (max-width: 450px) {
-      font-size: 2rem;
-    }
   }
+
   .services-intro {
     margin-bottom: 1rem;
+
     p {
-      font-size: 1.2rem;
-      // color: #555;
-      color: var(--black-color);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      /* Responsive text size */
+      color: var(--gray-color);
+      /* Gray color */
       font-weight: 400;
     }
   }
 
-
   .p-text {
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 1.5vw, 0.8rem);
+    /* Responsive text size */
     text-align: left;
     color: var(--gray-color);
+    /* Gray color */
     line-height: 1.5;
-  
-    @media screen and (min-width: 2000px) {
-      font-size: 1.75rem;
-    }
   }
+
   .services-container {
     display: flex;
     flex-wrap: wrap;
@@ -67,31 +51,35 @@
       background: white;
       padding: 15px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); // Subtle shadow
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       width: 250px;
       transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-&:hover {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  }
+
+      &:hover {
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+      }
 
       .service-icon {
-        font-size: 2.5rem;
-        color: #3498db; // Light blue accent
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        /* Responsive icon size */
+        color: #3498db;
+        text-align: center;
         margin-bottom: 1rem;
       }
 
       h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        /* Responsive heading size */
         color: var(--black-color);
-        // color: #2c3e50; // Dark blue-gray for professionalism
         margin-bottom: 1rem;
         font-weight: 600;
       }
 
       p {
-        font-size: 1rem;
-        // color: #666;
-        color: var(--black-color);
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        /* Responsive text size */
+        color: var(--gray-color);
+        /* Gray color */
         margin-bottom: 1.5rem;
         line-height: 1.6;
       }
@@ -102,10 +90,11 @@
         margin-bottom: 1.5rem;
 
         li {
-          font-size: 0.9rem;
+          font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+          /* Responsive list size */
           margin: 5% 5%;
-          // color: #555;
-          color: var(--black-color);
+          color: var(--gray-color);
+          /* Gray color */
           display: flex;
           align-items: center;
         }
