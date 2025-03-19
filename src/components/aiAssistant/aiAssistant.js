@@ -113,7 +113,7 @@ const AiAssistant = () => {
         "Yes, I offer maintenance and support services for completed projects, including updates and minor changes.",
     },
   ];
-  
+
   // Initialize the chat with a welcome message
   useEffect(() => {
     setMessages([{
@@ -192,23 +192,23 @@ const AiAssistant = () => {
   };
 
 
-    // Handle touch start
-    const handleTouchStart = () => {
-      setTouchStartTime(Date.now()); // Record the start time of the touch
-    };
-  
-    // Handle touch end
-    const handleTouchEnd = () => {
-      const touchDuration = Date.now() - touchStartTime;
-      if (touchDuration < 300) { // If the touch duration is less than 200ms, consider it a tap
-        setIsOpen(!isOpen);
-        setIsClicked(true);
-        setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
-      }
-    };
+  // Handle touch start
+  const handleTouchStart = () => {
+    setTouchStartTime(Date.now()); // Record the start time of the touch
+  };
+
+  // Handle touch end
+  const handleTouchEnd = () => {
+    const touchDuration = Date.now() - touchStartTime;
+    if (touchDuration < 300) { // If the touch duration is less than 200ms, consider it a tap
+      setIsOpen(!isOpen);
+      setIsClicked(true);
+      setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+    }
+  };
 
   return (
-    <Draggable>
+    <Draggable disabled={true}>
       <div className="ai-assistant">
         {/* Toggle button for the assistant */}
         <button
@@ -220,16 +220,18 @@ const AiAssistant = () => {
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          // onTouchStart={() => {
-          //   setIsOpen(!isOpen);
-          //   setIsClicked(true);
-          //   setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
-          // }}
-          // onTouchEnd={()=>{
-          //   setIsHovered(false)
-          // }}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+        // onTouchStart={() => {
+        //   setIsOpen(!isOpen);
+        //   setIsClicked(true);
+        //   setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+        // }}
+        // onTouchEnd={()=>{
+        //   setIsHovered(false)
+        // }}
+
+
+        // onTouchStart={handleTouchStart}
+        // onTouchEnd={handleTouchEnd}
 
         >
           <PandaIcon isOpen={isOpen} isTyping={isTyping} isHovered={isHovered} isClicked={isClicked} />
@@ -240,7 +242,9 @@ const AiAssistant = () => {
           <div className="assistant-popup">
             <div className="assistant-header">
               <h3>AI Assistant</h3>
-              <button onClick={() => setIsOpen(false)} onTouchStart={() => setIsOpen(false)} className="close-btn">
+              <button onClick={() => setIsOpen(false)}
+                // onTouchStart={() => setIsOpen(false)}
+                className="close-btn">
                 <FaTimes />
               </button>
             </div>
@@ -263,12 +267,14 @@ const AiAssistant = () => {
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder="Ask something..."
                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-                onTouchStart={(e) => {
-                  e.stopPropagation();
-                  e.target.focus(); // Force focus on touch
-                }}
+              // onTouchStart={(e) => {
+              //   e.stopPropagation();
+              //   e.target.focus(); // Force focus on touch
+              // }}
               />
-              <button onClick={handleSendMessage} onTouchStart={handleSendMessage}>
+              <button onClick={handleSendMessage}
+              // onTouchStart={handleSendMessage}
+              >
                 <FaPaperPlane />
               </button>
             </div>
@@ -276,7 +282,9 @@ const AiAssistant = () => {
             {/* Quick replies */}
             <div className="quick-replies">
               {faqs.map((faq, index) => (
-                <button key={index} onClick={() => handleQuickReply(faq.question)} onTouchStart={() => handleQuickReply(faq.question)} >
+                <button key={index} onClick={() => handleQuickReply(faq.question)}
+                // onTouchStart={() => handleQuickReply(faq.question)}
+                >
                   {faq.question}
                 </button>
               ))}
