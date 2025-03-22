@@ -25,13 +25,21 @@
   }
   .assistant-popup {
     position: absolute;
-    bottom: 60px;
+    bottom: 20px;
     right: 100%;
     height:80vh;
     width: 280px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    // background: #fff;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+    backdrop-filter: blur(35px); /* Blurry effect */
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
+    // border-radius: 10px;
     padding: 12px;
     display: flex;
     overflow: hidden;

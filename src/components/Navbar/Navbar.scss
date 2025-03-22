@@ -108,7 +108,9 @@ margin-top: var(--navbar-margin-top);
 }
 
 .navbar-float {
-  background-color: var(--white-color);
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+  backdrop-filter: blur(5px); /* Blurry effect */
+  // background-color: var(--white-color);
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
 }
 
