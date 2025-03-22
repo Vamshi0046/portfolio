@@ -15,7 +15,7 @@
   padding: 1rem;
 
   @media screen and (max-width: 1000px) {
-    width: 80%;
+    width: 95%;
     flex-direction: column;
   }
 }
@@ -130,6 +130,10 @@
     img {
       height: 320px;
     }
+  }
+  @media screen and (max-width: 365px) {
+    min-width: 95%;
+    margin: 1rem;
   }
 }
 

@@ -54,7 +54,7 @@
     width: 270px;
     flex-direction: column;
     margin: 2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     background-color: #fff;
     color: black;
@@ -70,8 +70,8 @@
       width: 470px;
       padding: 1.25rem;
     }
-    @media screen and (max-width: 300px) {
-      min-width: 100%;
+    @media screen and (max-width: 365px) {
+      min-width: 99%;
       margin: 1rem;
     }
   }
