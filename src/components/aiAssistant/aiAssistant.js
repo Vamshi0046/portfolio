@@ -68,7 +68,7 @@ const AiAssistant = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const chatRef = useRef(null);
-  const [touchStartTime, setTouchStartTime] = useState(0);
+  // const [touchStartTime, setTouchStartTime] = useState(0);
 
   useEffect(() => {
     if (chatRef.current) {
@@ -193,19 +193,19 @@ const AiAssistant = () => {
 
 
   // Handle touch start
-  const handleTouchStart = () => {
-    setTouchStartTime(Date.now()); // Record the start time of the touch
-  };
+  // const handleTouchStart = () => {
+  //   setTouchStartTime(Date.now()); // Record the start time of the touch
+  // };
 
   // Handle touch end
-  const handleTouchEnd = () => {
-    const touchDuration = Date.now() - touchStartTime;
-    if (touchDuration < 300) { // If the touch duration is less than 200ms, consider it a tap
-      setIsOpen(!isOpen);
-      setIsClicked(true);
-      setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
-    }
-  };
+  // const handleTouchEnd = () => {
+  //   const touchDuration = Date.now() - touchStartTime;
+  //   if (touchDuration < 300) { // If the touch duration is less than 200ms, consider it a tap
+  //     setIsOpen(!isOpen);
+  //     setIsClicked(true);
+  //     setTimeout(() => setIsClicked(false), 1000); // Reset after 1 second
+  //   }
+  // };
 
   return (
     <Draggable disabled={true}>
