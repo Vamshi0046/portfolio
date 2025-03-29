@@ -99,6 +99,10 @@
           align-items: center;
         }
       }
+      @media screen and (max-width: 415px) {
+        min-width: 99%;
+        margin: 1rem;
+      }
     }
   }
 }

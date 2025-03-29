@@ -48,14 +48,15 @@ const Services = () => {
                             ))}
                         </ul> */}
                         {/* <a href="#contact" >Let’s Build Something Great!</a> */}
-                        <button
-                            className="portfolio-button"
-                            style={{ margin: "-1px" }}
-                            onClick={() => window.location.href = "#contact"}
-                        >
-                            Let’s Build Something Great!
-                        </button>
-
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <button
+                                className="portfolio-button"
+                                style={{ margin: "-1px", alignItems: 'center' }}
+                                onClick={() => window.location.href = "#contact"}
+                            >
+                                Let’s Build Something Great!
+                            </button>
+                        </div>
 
                     </div>
                 ))}
